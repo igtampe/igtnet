@@ -60,7 +60,7 @@ function AboutDialog(props) {
                     <table>
                         <tr>
                             <td width='1'><img src='https://avatars.githubusercontent.com/u/49919240?v=4' width='50px' style={{ margin: '25px' }} /></td>
-                            <td>This website and all programs linked from it were programmed by Chopo. Learn more about him in his <Link href='https://sites.google.com/view/igtampe'>site</Link></td>
+                            <td>This website and all programs linked from it were programmed by Chopo. Learn more about him on his <Link href='https://sites.google.com/view/igtampe'>site</Link></td>
                         </tr>
                     </table>
                     <Divider style={{marginBottom:'20px'}}/>
