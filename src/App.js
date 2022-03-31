@@ -77,7 +77,7 @@ function CardDisplay(props) {
     return (<Grid container spacing={2}>
 
         <IGTNETCard title='Server Resources' headerBG='#3F0037'>
-            <Link href="http://igtnet-w.ddns.net:100/Nexousse3.0.zip">Nexousse</Link><br />
+            <Link href="/resources/Nexousse3.0.zip">Nexousse</Link><br />
             <Link href="https://github.com/igtampe/SimpleElevator/releases/tag/2.0">SimpleElevator</Link><br />
             <Link href="https://github.com/igtampe/MirrorHelper/releases/tag/V1.1">MirrorHelper</Link> and<> </> {/* That actually works */}
             <Link href="https://github.com/igtampe/RotateHelper/releases/tag/V1.0">RotateHelper</Link><br />
