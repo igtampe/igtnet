@@ -90,14 +90,14 @@ function CardDisplay(props) {
         </IGTNETCard>
 
         <IGTNETCard title='UMS' headerBG='#3F1900'>
-            <Link href="https://umswiki.herokuapp.com">UMS Wiki</Link><br />
+            <Link href="https://umswiki.onrender.com/">UMS Wiki</Link><br />
             <Link href="http://nexusums.my.pebble.host:8037/?worldname=MSM.UMS&mapname=surface">UMS Live Map</Link><br />
             <Link href="/maps/umt.png">UMT Public Transit Map</Link><br />
             <Link href="/maps/velox.png">Velox (EPT/LPT) Map</Link><br />
         </IGTNETCard>
 
         <IGTNETCard title='Economy' headerBG='#3F3500'>
-            <Link href="https://necon.herokuapp.com">Neco (.Net Economy)</Link><br />
+            <Link href="https://neco.igtampe.com">Neco (.Net Economy)</Link><br />
             <Link href="https://docs.google.com/spreadsheets/d/1E5XBO7P6N-PYZ2V87v55amE2wD1S2lrAJ6KM5heZpRU/edit">GAH Item Registry</Link><br />
             <Link href="https://docs.google.com/spreadsheets/d/18d-MSWSFSJelNZ9Zphm2WkOrVFolM7IZDUAUlImGEuA/edit">SDC Company Registry</Link><br />
             <Link href="https://docs.google.com/spreadsheets/d/1DNQtjKvKYqI9diTD2_7_lYWeZ9oUucpt24tLBEcF8aM/edit">Planes Catalogue</Link><br />
