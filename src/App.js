@@ -96,7 +96,7 @@ function CardDisplay(props) {
         </IGTNETCard>
 
         <IGTNETCard title='UMS' headerBG='#3F1900' Vertical={props.Vertical}>
-            <Link href="https://umswiki.onrender.com/">UMS Wiki</Link><br />
+            <Link href="https://umswiki.igtampe.com/">UMS Wiki</Link><br />
             <Link href="http://nexusums.my.pebble.host:8037/?worldname=MSM.UMS&mapname=surface">UMS Live Map</Link><br />
             <Link href="/maps/umt.png">UMT Public Transit Map</Link><br />
             <Link href="/maps/velox.png">Velox (EPT/LPT) Map</Link><br />
