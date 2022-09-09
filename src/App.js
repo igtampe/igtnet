@@ -25,7 +25,7 @@ export default function App(props) {
         <>
             <Typography>
                 <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center" style={{ minHeight: '98vh' }}>
-                    <Grid item xs={12} style={{ width: '75%', maxWidth: '800px' }}>
+                    <Grid item xs={12} style={Vertical ? {width : '100%'} : { width: '75%', maxWidth: '800px' }}>
                         <Card style={{ width: '100%' }}>
                             <CardContent>
                                 <table width='100%'>
