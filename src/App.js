@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Grid from "@mui/material/Grid"
 import { Typography, Card, CardContent, createTheme, ThemeProvider, IconButton, Link, Dialog, DialogContent, DialogTitle, DialogContentText, Divider } from "@mui/material";
 import { QuestionMark } from "@mui/icons-material";
+import useWindowDimensions from './hooks/useWindowDimensions';
 
 export const darkTheme = createTheme({
     palette: {
@@ -14,6 +15,11 @@ export const darkTheme = createTheme({
 export default function App(props) {
 
     const [aboutOpen, setAboutOpen] = useState(false)
+    const { width } = useWindowDimensions();
+
+    //Why on earth aren't these like separate files aaaaaaaaaa 
+
+    var Vertical = width < 900;
 
     return (
         <>
@@ -31,9 +37,9 @@ export default function App(props) {
                             </CardContent>
                             <CardContent style={{ background: '#444444', color: '#FFFFFF' }}>
                                 <ThemeProvider theme={darkTheme}>
-                                    <CardDisplay /><br />
+                                    <CardDisplay Vertical={Vertical} /><br />
                                     <div style={{ textAlign: 'center', background: '#222222', padding: '2px' }}></div><br />
-                                    <ServerDisplay /><br />
+                                    <ServerDisplay Vertical={Vertical}/><br />
                                 </ThemeProvider>
                             </CardContent>
                         </Card>
@@ -76,27 +82,27 @@ function CardDisplay(props) {
 
     return (<Grid container spacing={2}>
 
-        <IGTNETCard title='Server Resources' headerBG='#3F0037'>
+        <IGTNETCard title='Server Resources' headerBG='#3F0037' Vertical={props.Vertical}>
             <Link href="/resources/Nexousse3.0.zip">Nexousse</Link><br />
             <Link href="https://github.com/igtampe/SimpleElevator/releases/tag/2.0">SimpleElevator</Link><br />
             <Link href="https://github.com/igtampe/MirrorHelper/releases/tag/V1.1">MirrorHelper</Link> and<> </> {/* That actually works */}
             <Link href="https://github.com/igtampe/RotateHelper/releases/tag/V1.0">RotateHelper</Link><br />
         </IGTNETCard>
 
-        <IGTNETCard title='Handbooks' headerBG='#3F0000'>
+        <IGTNETCard title='Handbooks' headerBG='#3F0000' Vertical={props.Vertical} >
             <Link href="https://docs.google.com/document/d/1kKtXkHwkvgFcONN0F0Bf9D3M0auYXTh3URV60Ipeo5o/edit">Nexus General Handbook</Link><br />
             <Link href="https://docs.google.com/document/d/1tJXNMCxMvC1oRl2sRyapNzQ1zWjMqeTLxP7RxngI0u0/edit">UMS Government Handbook</Link><br />
             <Link href="https://docs.google.com/document/d/1Kpe3iXSkhzRtPp5sYkF8hms5aP2vwr9jxjknxyJe7b4/edit">UMS Economy Handbook</Link><br />
         </IGTNETCard>
 
-        <IGTNETCard title='UMS' headerBG='#3F1900'>
+        <IGTNETCard title='UMS' headerBG='#3F1900' Vertical={props.Vertical}>
             <Link href="https://umswiki.onrender.com/">UMS Wiki</Link><br />
             <Link href="http://nexusums.my.pebble.host:8037/?worldname=MSM.UMS&mapname=surface">UMS Live Map</Link><br />
             <Link href="/maps/umt.png">UMT Public Transit Map</Link><br />
             <Link href="/maps/velox.png">Velox (EPT/LPT) Map</Link><br />
         </IGTNETCard>
 
-        <IGTNETCard title='Economy' headerBG='#3F3500'>
+        <IGTNETCard title='Economy' headerBG='#3F3500' Vertical={props.Vertical}>
             <Link href="https://neco.igtampe.com">Neco (.Net Economy)</Link><br />
             <Link href="https://docs.google.com/spreadsheets/d/1E5XBO7P6N-PYZ2V87v55amE2wD1S2lrAJ6KM5heZpRU/edit">GAH Item Registry</Link><br />
             <Link href="https://docs.google.com/spreadsheets/d/18d-MSWSFSJelNZ9Zphm2WkOrVFolM7IZDUAUlImGEuA/edit">SDC Company Registry</Link><br />
@@ -117,7 +123,7 @@ function IGTNETCard(props) {
         ? { ...style, color: props.headerFG }
         : { ...style, color: '#FFFFFF' }
 
-    return (<Grid item xs={6}>
+    return (<Grid item xs={props.Vertical ? 12 : 6}>
         <Card>
             <CardContent style={style}>
                 <b>{props.title}</b>
@@ -135,15 +141,16 @@ function ServerDisplay(props) {
 
     return (<Grid container spacing={2}>
 
-        <ServerCard name='Nexus' link='https://discord.com/invite/2RPNKWd' image='/servericons/nexus.jpg'>
+        <ServerCard name='Nexus' link='https://discord.com/invite/2RPNKWd' image='/servericons/nexus.jpg' Vertical={props.Vertical}>
             Nexus is the hub of our communication network</ServerCard>
 
-        <ServerCard name='Nexus Corporate' link='https://discord.com/invite/ZDBtwNA' image='/servericons/nexuscorp.png'>
+        <ServerCard name='Nexus Corporate' link='https://discord.com/invite/ZDBtwNA' image='/servericons/nexuscorp.png' Vertical={props.Vertical}>
             Nexus Corp. holds offices for corporations in the UMS</ServerCard>
 
         <ServerCard name='UMS Government'
             link='https://discord.com/invite/5MC5nBe'
-            image='/servericons/umsgov.png'>
+            image='/servericons/umsgov.png'
+            Vertical={props.Vertical}>
             The UMS Model Nation's Government Server</ServerCard>
 
     </Grid>)
@@ -152,7 +159,7 @@ function ServerDisplay(props) {
 
 function ServerCard(props) {
 
-    return (<Grid item xs={4}>
+    return (<Grid item xs={props.Vertical ? 12 : 4}>
         <a href={props.link}>
             <Card>
                 <CardContent style={{ textAlign: 'center' }}>
