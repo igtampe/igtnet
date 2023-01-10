@@ -70,7 +70,7 @@ function AboutDialog(props) {
                         </tr>
                     </table>
                     <Divider style={{marginBottom:'20px'}}/>
-                    The IGTNET is (C)2022 Igtampe, no rights reserved. Long live Artemis. Its service isn't done, but its time as a web server is done.
+                    The IGTNET is (C)2023 Igtampe, no rights reserved. Long live Artemis. Its service isn't done, but its time as a web server is done.
                 </DialogContentText>
             </DialogContent>
         </Dialog>
